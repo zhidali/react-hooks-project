@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+/*
+ * @author: zhidl
+ * @Date: 2020-06-03 17:22:02
+ * @description: 主应用入口
+ * @LastEditTime: 2020-06-03 18:08:14
+ * @LastEditors: zhidl
+ */ 
+import {useLocation} from 'react-router-dom'
+import React, {useState, useEffect, memo, Fragment} from 'react';
+import './assets/css/app.less'
+// console.log(useLocation());
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="sidebar">
+        侧边导航栏
+      </div>
+      <div className="main">
+        <div className="header">
+          <span className="username">Hi, 安歌</span>
+        </div>
+        <div className="wrapper">
+          <div className='zhawei'>
+            主体内容
+          </div>
+        </div>
+        <div className="footer">
+          <span className="copyright">Copyright@2020 你瞅啥</span>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default memo(App);
